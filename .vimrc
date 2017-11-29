@@ -5,12 +5,10 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-rails'
 Plugin 'tpope/vim-surround'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'majutsushi/tagbar'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'tomtom/tcomment_vim'
 Plugin 'joshdick/onedark.vim' 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -18,6 +16,11 @@ Plugin 'alvan/vim-closetag'
 Plugin 'tomasr/molokai'
 Plugin 'mattn/emmet-vim'
 Plugin 'morhetz/gruvbox'
+Plugin 'scrooloose/syntastic'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-rails'
+Plugin 'tomtom/tcomment_vim'
+
 Plugin 'easymotion/vim-easymotion'
 call vundle#end()            
 filetype plugin indent on    
@@ -37,10 +40,6 @@ set shiftwidth=4
 set expandtab
 set number 
 set t_Co=256
-nnoremap gh <C-W><C-H>
-nnoremap gj <C-W><C-J>
-nnoremap gk <C-W><C-K>
-nnoremap gl <C-W><C-L>
 inoremap {<cr> {<cr>}<c-o><s-o>
 inoremap [<cr> [<cr>]<c-o><s-o>
 inoremap (<cr> (<cr>)<c-o><s-o>
