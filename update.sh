@@ -1,13 +1,14 @@
 #!/bin/sh
 
-rm -rf termite
-rm -rf i3
-rm -rf ranger
-rm -rf polybar
-rm vim/.vimrc
-rm zsh/.zshrc
-rm zsh/.zprofile
-rm .Xmodmap
+rm -rf ~/dotfile/termite
+rm -rf ~/dotfile/i3
+rm -rf ~/dotfile/ranger
+rm -rf ~/dotfile/polybar
+rm ~/dotfile/vim/.vimrc
+rm ~/dotfile/zsh/.zshrc
+rm ~/dotfile/zsh/.zprofile
+rm ~/dotfile/.Xmodmap
+rm -rf ~/dotfile/zsh/.oh-my-zsh/
 
 
 cp -r ~/.config/termite ~/dotfiles
@@ -18,9 +19,16 @@ cp ~/.zprofile ~/dotfiles/zsh
 cp ~/.vimrc ~/dotfiles/vim
 cp ~/.zshrc ~/dotfiles/zsh
 cp ~/.Xmodmap ~/dotfiles
+cp -r ~/.oh-my-zsh ~/dotfiles/zsh
+
+rm -rf ~/dotfile/zsh/.oh-my-zsh/.git
+rm ~/dotfile/zsh/.oh-my-zsh/.gitignore
+rm -rf ~/dotfile/zsh/.oh-my-zsh/custon/plugins/zsh-256color/.git
+rm -rf ~/dotfile/zsh/.oh-my-zsh/custon/plugins/zsh-autosuggestions/.git
+
 
 git add .
-git commit -m "update dotfile"
+git commit -m "update dotfiles"
 git push
 
 
