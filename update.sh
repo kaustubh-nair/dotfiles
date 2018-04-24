@@ -22,7 +22,7 @@ cp -r ~/.oh-my-zsh ~/dotfiles/zsh
 rm -rf ~/dotfile/zsh/.oh-my-zsh/.git
 rm -rf ~/dotfile/zsh/.oh-my-zsh/custom/plugins/zsh-256color/.git
 rm -rf ~/dotfile/zsh/.oh-my-zsh/custom/plugins/zsh-autosuggestions/.git
-rm -rf ~/dotfile/zsh/.oh-my-zsh/custom/plugins/alien-minimal/.git
+rm -rf ~/dotfile/zsh/.oh-my-zsh/plugins/alien-minimal/.git
 
 
 git add .
