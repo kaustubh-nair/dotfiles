@@ -1,17 +1,11 @@
 #!/bin/bash
 
-#shopt -s extglob
-pwd
-rm -rf ~/dotfiles/termite
-rm -rf ~/dotfiles/i3
-rm -rf ~/dotfiles/ranger
-rm -rf ~/dotfiles/polybar
-rm ~/dotfiles/vim/.vimrc
-rm ~/dotfiles/zsh/.zshrc
-rm ~/dotfiles/zsh/.zprofile
-rm ~/dotfiles/.xmodmap-archlinux
-rm -rf ~/dotfiles/zsh/.oh-my-zsh/
+shopt -s extglob
 
+if [ $(pwd) == /home/k/dotfiles ]
+then
+  rm -rf !(.git|update.sh)
+fi
 
 cp -r ~/.config/termite ~/dotfiles
 cp -r ~/.config/i3 ~/dotfiles
