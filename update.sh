@@ -20,8 +20,9 @@ cp ~/.xmodmap-archlinux ~/dotfiles
 cp -r ~/.oh-my-zsh ~/dotfiles/zsh
 
 rm -rf ~/dotfile/zsh/.oh-my-zsh/.git
-rm -rf ~/dotfile/zsh/.oh-my-zsh/custon/plugins/zsh-256color/.git
-rm -rf ~/dotfile/zsh/.oh-my-zsh/custon/plugins/zsh-autosuggestions/.git
+rm -rf ~/dotfile/zsh/.oh-my-zsh/custom/plugins/zsh-256color/.git
+rm -rf ~/dotfile/zsh/.oh-my-zsh/custom/plugins/zsh-autosuggestions/.git
+rm -rf ~/dotfile/zsh/.oh-my-zsh/custom/plugins/alien-minimal/.git
 
 
 git add .
