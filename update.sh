@@ -4,7 +4,7 @@ shopt -s extglob
 
 if [ $(pwd) == /home/k/dotfiles ]
 then
-  rm -rf !(.git|update.sh)
+  rm -rf !(.git|update.sh|.|..)
 fi
 
 cp -r ~/.config/termite ~/dotfiles
