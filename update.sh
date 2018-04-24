@@ -1,5 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 
+#shopt -s extglob
+ls
 rm -rf ~/dotfiles/termite
 rm -rf ~/dotfiles/i3
 rm -rf ~/dotfiles/ranger
