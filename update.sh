@@ -22,7 +22,6 @@ cp ~/.xmodmap-archlinux ~/dotfiles
 cp -r ~/.oh-my-zsh ~/dotfiles/zsh
 
 rm -rf ~/dotfile/zsh/.oh-my-zsh/.git
-rm ~/dotfile/zsh/.oh-my-zsh/.gitignore
 rm -rf ~/dotfile/zsh/.oh-my-zsh/custon/plugins/zsh-256color/.git
 rm -rf ~/dotfile/zsh/.oh-my-zsh/custon/plugins/zsh-autosuggestions/.git
 
