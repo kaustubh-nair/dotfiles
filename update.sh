@@ -11,6 +11,8 @@ cp -r ~/.config/termite ~/dotfiles
 cp -r ~/.config/i3 ~/dotfiles
 cp -r ~/.config/ranger ~/dotfiles
 cp -r ~/.config/polybar ~/dotfiles
+mkdir zsh
+mkdir vim
 cp ~/.zprofile ~/dotfiles/zsh
 cp ~/.vimrc ~/dotfiles/vim
 cp ~/.zshrc ~/dotfiles/zsh
