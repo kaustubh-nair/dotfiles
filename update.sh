@@ -18,6 +18,7 @@ cp ~/.vimrc ~/dotfiles/vim
 cp ~/.zshrc ~/dotfiles/zsh
 cp ~/.xmodmap-archlinux ~/dotfiles
 cp -r ~/.oh-my-zsh ~/dotfiles/zsh
+cp -r /etc/X11 ~/dotfiles
 
 rm -rf ~/dotfile/zsh/.oh-my-zsh/.git
 rm -rf ~/dotfile/zsh/.oh-my-zsh/custom/plugins/zsh-256color/.git
