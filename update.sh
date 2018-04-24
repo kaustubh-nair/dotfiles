@@ -1,14 +1,14 @@
 #!/bin/sh
 
-rm -rf ~/dotfile/termite
-rm -rf ~/dotfile/i3
-rm -rf ~/dotfile/ranger
-rm -rf ~/dotfile/polybar
-rm ~/dotfile/vim/.vimrc
-rm ~/dotfile/zsh/.zshrc
-rm ~/dotfile/zsh/.zprofile
-rm ~/dotfile/.Xmodmap
-rm -rf ~/dotfile/zsh/.oh-my-zsh/
+rm -rf ~/dotfiles/termite
+rm -rf ~/dotfiles/i3
+rm -rf ~/dotfiles/ranger
+rm -rf ~/dotfiles/polybar
+rm ~/dotfiles/vim/.vimrc
+rm ~/dotfiles/zsh/.zshrc
+rm ~/dotfiles/zsh/.zprofile
+rm ~/dotfiles/.Xmodmap
+rm -rf ~/dotfiles/zsh/.oh-my-zsh/
 
 
 cp -r ~/.config/termite ~/dotfiles
