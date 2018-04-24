@@ -7,7 +7,7 @@ rm -rf ~/dotfiles/polybar
 rm ~/dotfiles/vim/.vimrc
 rm ~/dotfiles/zsh/.zshrc
 rm ~/dotfiles/zsh/.zprofile
-rm ~/dotfiles/.Xmodmap
+rm ~/dotfiles/.xmodmap-archlinux
 rm -rf ~/dotfiles/zsh/.oh-my-zsh/
 
 
@@ -18,7 +18,7 @@ cp -r ~/.config/polybar ~/dotfiles
 cp ~/.zprofile ~/dotfiles/zsh
 cp ~/.vimrc ~/dotfiles/vim
 cp ~/.zshrc ~/dotfiles/zsh
-cp ~/.Xmodmap ~/dotfiles
+cp ~/.xmodmap-archlinux ~/dotfiles
 cp -r ~/.oh-my-zsh ~/dotfiles/zsh
 
 rm -rf ~/dotfile/zsh/.oh-my-zsh/.git
