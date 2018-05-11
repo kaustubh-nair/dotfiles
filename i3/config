@@ -174,4 +174,4 @@ exec_always --no-startup-id compton -CGb
 exec_always --no-startup-id nm-applet -sm-disable
 exec_always --no-startup-id xmodmap ~/.xmodmap-archlinux
 
-
+bindsym Print exec --no-startup-id xfce4-screenshooter

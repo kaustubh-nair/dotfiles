@@ -73,7 +73,7 @@ plugins=(
   zsh-autosuggestions
   zsh-256color
   rails
-  #alien-minimal
+  alien-minimal
   archlinux
   web-search
 )
@@ -115,3 +115,6 @@ export PATH="$PATH:$HOME/.rvm/bin"
 if test -f ~/.rvm/scripts/rvm; then
    [ "$(type rvm)" = "function" ] || source ~/.rvm/scripts/rvm
 fi
+
+eval $(thefuck --alias)
+alias veri="~/app.sh"
