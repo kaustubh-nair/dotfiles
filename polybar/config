@@ -9,7 +9,7 @@
 
 [colors]
 foreground = #ffffff
-background = #000000
+background = #111111
 background-alt = #444
 foreground-alt = #555
 primary = #ffb52a
