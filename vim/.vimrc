@@ -13,16 +13,12 @@ Plugin 'majutsushi/tagbar'
 Plugin 'junegunn/fzf.vim'
 Plugin 'jacoborus/tender.vim'
 Plugin 'vim-airline/vim-airline'
-Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'tpope/vim-surround'
 Plugin 'mattn/emmet-vim'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
-Plugin 'morhetz/gruvbox'
-Plugin 'joshdick/onedark.vim'
 Plugin 'tomasr/molokai'
 Plugin 'rakr/vim-one'
-Plugin 'whatyouhide/gotham'
 
 call vundle#end()       
 filetype plugin indent on

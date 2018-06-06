@@ -66,15 +66,12 @@ ZSH_THEME="agnoster"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
   vundle
   github
   vi-mode
   zsh-autosuggestions
   zsh-256color
-  rails
   alien-minimal
-  archlinux
   web-search
 )
 
@@ -117,4 +114,10 @@ if test -f ~/.rvm/scripts/rvm; then
 fi
 
 eval $(thefuck --alias)
-alias veri="~/app.sh"
+alias c="clear"
+alias d="docker"
+alias dr="docker run"
+alias di="docker image"
+alias dc="docker-compose"
+alias cv="xclip -o"
+alias gc="git clone $(cv)"
