@@ -108,10 +108,6 @@ source $ZSH/oh-my-zsh.sh
 bindkey '^ ' autosuggest-accept
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-if test -f ~/.rvm/scripts/rvm; then
-   [ "$(type rvm)" = "function" ] || source ~/.rvm/scripts/rvm
-fi
 
 eval $(thefuck --alias)
 alias c="clear"
@@ -120,4 +116,44 @@ alias dr="docker run"
 alias di="docker image"
 alias dc="docker-compose"
 alias cv="xclip -o"
-alias gc="git clone $(cv)"
+alias gcl="source ~/.zshrc && git clone $(xclip -o)"
+alias rg="rails generate"
+alias rdm="rails db:migrate"
+alias rd="rails destroy"
+alias rdd="rails db:drop"
+alias rr="rails routes"
+alias sudo pacman -S="pac"
+alias lg="ls | grep"
+alias rdc='rails db:create'
+alias rds='rails db:seed'
+
+gc(){
+  git add .
+  git commit -m "$1"
+}
+gp(){
+  git add .
+  git commit -m "$3"
+  git push $1 $2
+}
+gop(){
+  git add .
+  git commit -m "$1"
+  git push origin master
+}
+j(){
+  javac "$1"
+  java ${1%.java}
+}
+
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+
+
+### Bashhub.com Installation
+if [ -f ~/.bashhub/bashhub.zsh ]; then
+    source ~/.bashhub/bashhub.zsh
+fi
+

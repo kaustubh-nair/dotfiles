@@ -6,7 +6,14 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'pangloss/vim-javascript'
+Plugin 'chrisbra/csv.vim'
+Plugin 'roosta/vim-srcery'
+Plugin 'pseewald/vim-anyfold'
+Plugin 'larssmit/vim-getafe'
+Plugin 'shime/vim-livedown'
+Plugin 'mattn/calendar-vim'
 Plugin 'junegunn/fzf'
+Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'alvan/vim-closetag'
 Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
@@ -14,6 +21,7 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'jacoborus/tender.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-surround'
+Plugin 'vimwiki/vimwiki'
 Plugin 'mattn/emmet-vim'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
@@ -24,7 +32,7 @@ call vundle#end()
 filetype plugin indent on
 syntax on
 set background=dark
-colorscheme molokai
+colorscheme srcery
 set tabstop=2
 set encoding=utf-8
 set fileencodings=utf-8
@@ -69,7 +77,7 @@ let g:airline#extensions#tabline#show_buffers = 0
 let g:fzf_action = {
       \ 'ctrl-o': 'tab split' }
 "closetag for erb
-let g:closetag_filenames = '*.html, *.erb'
+let g:closetag_filenames = '*.html, *.erb, *.md'
 
 
 let g:tagbar_type_python = {
@@ -84,3 +92,6 @@ let g:tagbar_type_python = {
     \ ],
 \ }
 
+nmap <C-M> :LivedownToggle<CR>
+let anyfold_activate=1
+set foldlevel=1000000
