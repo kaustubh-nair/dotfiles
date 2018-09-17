@@ -8,6 +8,7 @@ cp ./zsh/.zshrc ~/.zshrc
 cp -r ./zsh/.oh-my-zsh ~/.oh-my-zsh
 source ~/.zshrc
 vim +PluginInstall +qall
+xmodmap .xmod
 
 
 

@@ -16,7 +16,7 @@ mkdir vim
 cp ~/.zprofile ~/dotfiles/zsh
 cp ~/.vimrc ~/dotfiles/vim
 cp ~/.zshrc ~/dotfiles/zsh
-cp ~/.xmodmap-archlinux ~/dotfiles
+cp ~/.xmodmap-archlinux ~/dotfiles/.xmod
 cp -r ~/.oh-my-zsh ~/dotfiles/zsh
 cp -r /etc/X11 ~/dotfiles
 
