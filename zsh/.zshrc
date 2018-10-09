@@ -123,9 +123,11 @@ alias rd="rails destroy"
 alias rdd="rails db:drop"
 alias rr="rails routes"
 alias sudo pacman -S="pac"
-alias lg="ls | grep"
+alias lg="ls -a | grep"
 alias rdc='rails db:create'
+alias rc='rails console'
 alias rds='rails db:seed'
+alias holyrails='rails db:drop && rails db:create && rails db:migrate'
 
 gc(){
   git add .
@@ -141,6 +143,7 @@ gop(){
   git commit -m "$1"
   git push origin master
 }
+#compile and run java commands
 j(){
   javac "$1"
   java ${1%.java}
