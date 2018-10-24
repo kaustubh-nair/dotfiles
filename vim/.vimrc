@@ -58,16 +58,6 @@ nnoremap zs :w<CR>
 nnoremap zz :wq<CR>
 nnoremap zq :q!<CR>
 let mapleader = "\<Space>"
-let t:is_transparent = 0
-function! Toggle_transparent()
-    if t:is_transparent == 0
-        hi Normal guibg=NONE ctermbg=NONE
-        let t:is_transparent = 1
-    else
-        set background=dark
-        let t:is_tranparent = 0
-    endif
-endfunction
 
 let g:airline_theme='raven'
 let g:airline#extensions#tabline#formatter = 'jsformatter'
