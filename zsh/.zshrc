@@ -3,6 +3,8 @@
 
 # Path to your oh-my-zsh installation.
   export ZSH=/home/k/.oh-my-zsh
+
+
   #
   #
   #
@@ -14,7 +16,7 @@ export AM_GIT_SYM=git
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -51,7 +53,7 @@ ZSH_THEME="agnoster"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -109,14 +111,11 @@ bindkey '^ ' autosuggest-accept
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 
-eval $(thefuck --alias)
 alias c="clear"
 alias d="docker"
 alias dr="docker run"
 alias di="docker image"
 alias dc="docker-compose"
-alias cv="xclip -o"
-alias gcl="source ~/.zshrc && git clone $(xclip -o)"
 alias rg="rails generate"
 alias rdm="rails db:migrate"
 alias rd="rails destroy"
@@ -134,14 +133,22 @@ gc(){
   git commit -m "$1"
 }
 gp(){
-  git add .
-  git commit -m "$3"
-  git push $1 $2
+  git push $1 $(git rev-parse --abbrev-ref HEAD)
 }
-gop(){
-  git add .
-  git commit -m "$1"
-  git push origin master
+gpo(){
+  git push origin $(git rev-parse --abbrev-ref HEAD)
+}
+gpu(){
+  git push upstream $(git rev-parse --abbrev-ref HEAD)
+}
+gpl(){
+  git pull $1 $(git rev-parse --abbrev-ref HEAD)
+}
+gplo(){
+  git pull origin $(git rev-parse --abbrev-ref HEAD)
+}
+gplu(){
+  git pull upstream $(git rev-parse --abbrev-ref HEAD)
 }
 #compile and run java commands
 j(){
@@ -150,13 +157,69 @@ j(){
 }
 
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+export VISUAL=vim
+export EDITOR="$VISUAL"
+function cats() {
+	rdm=$(( ((RANDOM<<15)|RANDOM) % 5000 ));
+	if test $rdm -lt 400
+	then
+		base64 -D <<< "ICAgICAgICAgICAgICAgICAgVC4iLS5fLi4tLS0uLl8sLSIvfAogICAgICAgICAgICAgICAgICBsfCItLiAgXy52Ll8gICAoIiB8CiAgICAgICAgICAgICAgICAgIFtsIC8uJ18gXDsgX34iLS5gLXQKICAgICAgICAgICAgICAgICAgWSAiIF8ob30gX3tvKS5fIF4ufAogICAgICAgICAgICAgICAgICBqICBUICAsLTx2Pi0uICBUICBdCiAgICAgICAgICAgICAgICAgIFwgIGwgKCAvLV4tXCApICEgICEKICAgICAgICAgICAgICAgICAgIFwuIFwuICAifiIgIC4vICAvYy0uLixfXwogICAgICAgICAgICAgICAgICAgICBeci0gLi5fIC4tIC4tIiAgYC0gLiAgfiItLS4KICAgICAgICAgICAgICAgICAgICAgID4gXC4gICAgICAgICAgICAgICAgICAgICAgXAogICAgICAgICAgICAgICAgICAgICAgXSAgIF4uICAgICAgICAgICAgICAgICAgICAgXAogICAgICAgICAgICAgICAgICAgICAgMyAgLiAgIj4gICAgICAgICAgICAuICAgICAgIFkKICAgICAgICAgLC5fXy4tLS5fICAgX2ogICBcIH4gICAuICAgICAgICAgOyAgICAgICB8CiAgICAgICAgKCAgICB+Ii0uX34iXi5fXCAgIF4uICAgIF4uXyAgICAgIEkgICAgIC4gbAogICAgICAgICAiLS5fIF9fXyB+Ii0sXzcgICAgLlotLl8gICA3IiAgIFkgICAgICA7ICBcICAgICAgICBfCiAgICAgICAgICAgIC8iICAgIn4tKHIgciAgXy9fLS0uX34tLyAgICAvICAgICAgLywuLS1eLS5fICAgLyBZCiAgICAgICAgICAgICItLl8gICAgJyJ+fn4+LS5ffl0+LS1eLS0tLi9fX19fLC5efiAgICAgICAgXi5eICAhCiAgICAgICAgICAgICAgICB+LS0uXyAgICAnICAgWS0tLS4gICAgICAgICAgICAgICAgICAgICAgICBcLi8KICAgICAgICAgICAgICAgICAgICAgfn4tLS5fICBsXyAgICkgICAgICAgICAgICAgICAgICAgICAgICBcCiAgICAgICAgICAgICAgICAgICAgICAgICAgIH4tLl9+fn4tLS0uXyxfX19fLi4tLS0gICAgICAgICAgIFwKICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIH4tLS0tIn4gICAgICAgXAogICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXA=="
+	else
+		/bin/cat $1
+	fi;
+}
 
+. ~/.zsh/z/z.sh
 
+g(){
+  gcc $1
+  ./a.out
+}
 
-### Bashhub.com Installation
-if [ -f ~/.bashhub/bashhub.zsh ]; then
-    source ~/.bashhub/bashhub.zsh
-fi
+ali(){
+  echo alias $* >> ~/.zshrc
+  source ~/.zshrc
+}
+cdl() { cd "$@" && ls; }
+alias pip='pip3'
+cdl() { cd "$@" && ls; }
+alias turnoff='xrandr --output eDP-1 --off'
+alias turnoon='xrandr --output eDP-1 --on'
+alias lss='ls --sort time | head -n 10'
+myzip(){
+  mkdir temp
+  mv $1 temp
+  cd temp
+  unzip $1
+  rm $1
+  mv * ../$2
+  cd ..
+  rm -rf temp
+}
+
+alias p='python3 -W ignore'
+
+crun() {
+  rm a.out
+  g++ $1
+  ./a.out
+}
+drun() {
+  rm a.out
+  g++ -g $1
+  gdb a.out
+}
+
+create_for_c()
+{
+  echo "clear\n rm a.out\n g++ \n ./a.out\n" >> run.sh
+  chmod +x run.sh
+}
+
+alias hdmi='pactl set-card-profile 0 output:hdmi-stereo'
+alias nohdmi='pactl set-card-profile 0 output:analog-stereo'
+alias pg='ps aux | grep'
+export DESKTOP_SESSION="kde"
+export XDG_CURRENT_DESKTOP="KDE"
+
 

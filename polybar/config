@@ -9,10 +9,11 @@
 
 [colors]
 foreground = #ffffff
-background = #111111
+background = #002F343F
 background-alt = #111
 foreground-alt = #111
 primary = #ffb52a
+i3 = #aa2F343F
 secondary = #e60053
 alert = #bd2c40
 modb       = #020c0d
@@ -29,6 +30,7 @@ white   = #d65d0e
 
 
 [bar/example]
+enable-ipc = true
 monitor = ${env:MONITOR}
 width = 100%
 height = 25
@@ -54,9 +56,9 @@ font-0 = fixed:pixelsize=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 
-modules-left = i3
-modules-center = date 
-modules-right = volume battery wlan
+modules-left = date battery pomobar
+modules-center = i3 
+modules-right = volume wlan
 
 tray-position = right
 tray-padding = 2
@@ -137,7 +139,7 @@ enable-scroll = false
 pin-workspaces = true
 
 label-mode-padding = 2
-label-mode-foreground = #ffffff
+label-mode-foreground = ${colors.i3} 
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
@@ -375,3 +377,13 @@ margin-top = 0
 margin-bottom = 0
 
 ; vim:ft=dosini
+
+
+[module/pomobar]
+type=custom/ipc
+hook-0 = cat ~/.pomobaroutput
+initial=1
+click-left = ~/src/scripts/pomobar.py --action=new &
+click-middle= ~/src/scripts/pomobar.py --action=kill &
+click-right = ~/src/scripts/pomobar.py --action=break &
+

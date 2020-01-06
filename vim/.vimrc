@@ -1,15 +1,20 @@
 set nocompatible
 filetype off
 
+
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'xuhdev/vim-latex-live-preview'
+Plugin 'junegunn/goyo.vim'
+Plugin 'connorholyday/vim-snazzy'
+Plugin '907th/vim-auto-save'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'pangloss/vim-javascript'
 Plugin 'chrisbra/csv.vim'
 Plugin 'roosta/vim-srcery'
-Plugin 'pseewald/vim-anyfold'
 Plugin 'larssmit/vim-getafe'
+Plugin 'lervag/vimtex'
 Plugin 'shime/vim-livedown'
 Plugin 'mattn/calendar-vim'
 Plugin 'junegunn/fzf'
@@ -19,11 +24,9 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'majutsushi/tagbar'
 Plugin 'junegunn/fzf.vim'
 Plugin 'jacoborus/tender.vim'
-Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-surround'
 Plugin 'vimwiki/vimwiki'
 Plugin 'mattn/emmet-vim'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tomasr/molokai'
 Plugin 'rakr/vim-one'
@@ -32,7 +35,7 @@ call vundle#end()
 filetype plugin indent on
 syntax on
 set background=dark
-colorscheme srcery
+colorscheme snazzy
 set tabstop=2
 set encoding=utf-8
 set fileencodings=utf-8
@@ -53,6 +56,7 @@ inoremap (<cr> (<cr>)<c-o><s-o>
 nmap <F8> :NERDTree<Enter>
 nmap <F9> :TagbarToggle<CR>
 imap <Tab> <C-P>
+imap <C-L> <F7> 
 nmap <C-o> :FZF<Enter>
 nnoremap zs :w<CR>
 nnoremap zz :wq<CR>
@@ -69,11 +73,6 @@ function! Toggle_transparent()
     endif
 endfunction
 
-let g:airline_theme='raven'
-let g:airline#extensions#tabline#formatter = 'jsformatter'
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_buffers = 0
 let g:fzf_action = {
       \ 'ctrl-o': 'tab split' }
 "closetag for erb
@@ -93,5 +92,30 @@ let g:tagbar_type_python = {
 \ }
 
 nmap <C-M> :LivedownToggle<CR>
-let anyfold_activate=1
-set foldlevel=1000000
+let g:goyo_width = 190
+let g:goyo_height = 140
+let g:goyo_linenr = 0
+nmap <C-g> :Goyo<CR>
+autocmd Filetype tex setl updatetime=1
+let g:livepreview_engine = 'pdflatex'
+
+
+let s:hidden_all = 0
+function! ToggleHiddenAll()
+    if s:hidden_all  == 0
+        let s:hidden_all = 1
+        set noshowmode
+        set noruler
+        set laststatus=0
+        set noshowcmd
+    else
+        let s:hidden_all = 0
+        set showmode
+        set ruler
+        set laststatus=2
+        set showcmd
+    endif
+endfunction
+
+autocmd BufReadPost * call ToggleHiddenAll()
+autocmd VimEnter * AutoSaveToggle
