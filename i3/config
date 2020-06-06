@@ -1,6 +1,7 @@
 # # >>> Plasma Integration <<<
 
-# Try to kill the wallpaper set by Plasma (it takes up the entire workspace
+#posters/animals_edit.jpg Try to kill the wallpaper set by Plasma (it takes up the entire workspace
+#
 # and hides everythiing)
 #Needed for i3-gaps
 #hide_edge_borders both
@@ -74,6 +75,9 @@ bindsym Mod1+d exec rofi -show drun
 bindsym Mod1+f exec firefox
 bindsym Mod1+Shift+V exec voobly
 bindsym Mod1+s exec spotify
+bindsym Mod1+b exec blueman-manager
+bindsym Mod1+o exec okular
+bindsym Mod1+n exec notion-desktop
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -220,4 +224,5 @@ exec_always --no-startup-id xmodmap -e "keycode 133 = Escape"
 exec_always --no-startup-id setxkbmap -option caps:backspace
 exec_always --no-startup-id setxkbmap -option shift:both_capslock
 exec_always --no-startup-id xmodmap -e "clear Lock"
-exec_always --no-startup-id feh --bg-scale ~/posters/animals_edit.jpg
+exec_always --no-startup-id feh --bg-scale ~/Pictures/train.jpg
+#exec_always --no-startup-id compton --config ~/.config/compton/config

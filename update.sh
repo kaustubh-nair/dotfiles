@@ -27,6 +27,6 @@ rm -rf ~/dotfile/zsh/.oh-my-zsh/plugins/alien-minimal/.git
 
 git add .
 git commit -m "update dotfiles"
-git push
+git push origin master
 
 

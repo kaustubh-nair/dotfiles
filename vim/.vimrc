@@ -16,7 +16,6 @@ Plugin 'roosta/vim-srcery'
 Plugin 'larssmit/vim-getafe'
 Plugin 'lervag/vimtex'
 Plugin 'shime/vim-livedown'
-Plugin 'mattn/calendar-vim'
 Plugin 'junegunn/fzf'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'alvan/vim-closetag'
@@ -30,13 +29,15 @@ Plugin 'mattn/emmet-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tomasr/molokai'
 Plugin 'rakr/vim-one'
+Plugin 'zxqfl/tabnine-vim'
 
 call vundle#end()       
+so ~/.vim/plugins/a.vim
 filetype plugin indent on
 syntax on
 set background=dark
 colorscheme snazzy
-set tabstop=2
+set tabstop=4
 set encoding=utf-8
 set fileencodings=utf-8
 set clipboard=unnamed
@@ -44,8 +45,8 @@ set laststatus=2
 set noshowmode
 set noswapfile
 set relativenumber
-set softtabstop=2
-set shiftwidth=2
+set softtabstop=4
+set shiftwidth=4
 set expandtab
 set number
 set t_Co=256
@@ -58,6 +59,8 @@ nmap <F9> :TagbarToggle<CR>
 imap <Tab> <C-P>
 imap <C-L> <F7> 
 nmap <C-o> :FZF<Enter>
+nmap <C-A> :Ag<Enter>
+nmap <C-W> :A<Enter>
 nnoremap zs :w<CR>
 nnoremap zz :wq<CR>
 nnoremap zq :q!<CR>
@@ -119,3 +122,9 @@ endfunction
 
 autocmd BufReadPost * call ToggleHiddenAll()
 autocmd VimEnter * AutoSaveToggle
+let wiki = {}
+let wiki.path = '~/vimwiki/'
+let wiki.nested_syntaxes = {'python': 'python', 'cpp': 'cpp','rust':'rust', 'ocaml': 'ocaml'}
+let wiki.syntax = 'markdown'
+let wiki.ext = '.md'
+let g:vimwiki_list = [wiki]

@@ -111,6 +111,7 @@ bindkey '^ ' autosuggest-accept
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 
+alias vmi='vim'
 alias c="clear"
 alias d="docker"
 alias dr="docker run"
@@ -127,10 +128,23 @@ alias rdc='rails db:create'
 alias rc='rails console'
 alias rds='rails db:seed'
 alias holyrails='rails db:drop && rails db:create && rails db:migrate'
+alias gk='git checkout'
+alias gb='git branch'
+alias gd='git diff'
+alias gst='git status'
+alias gl='git log'
+alias softreset='git reset HEAD~'
+alias grc='git rebase --continue'
+alias ga='git add .'
 
 gc(){
   git add .
-  git commit -m "$1"
+  if [ -z "$1" ]
+  then
+    git commit
+  else
+    git commit -m "$1"
+  fi
 }
 gp(){
   git push $1 $(git rev-parse --abbrev-ref HEAD)
@@ -150,10 +164,26 @@ gplo(){
 gplu(){
   git pull upstream $(git rev-parse --abbrev-ref HEAD)
 }
+gcp()
+{
+  git cherry-pick $1
+}
+alias gr="git rebase"
 #compile and run java commands
 j(){
   javac "$1"
   java ${1%.java}
+}
+
+foo()
+{
+    for var in "$@"
+    do
+        a=${var%.jpg}
+        b=".jpeg"
+        c="${a}${b}"
+        mv "$var" "$c"
+    done
 }
 
 
@@ -218,8 +248,56 @@ create_for_c()
 
 alias hdmi='pactl set-card-profile 0 output:hdmi-stereo'
 alias nohdmi='pactl set-card-profile 0 output:analog-stereo'
-alias pg='ps aux | grep'
+alias psg='ps aux | grep'
 export DESKTOP_SESSION="kde"
 export XDG_CURRENT_DESKTOP="KDE"
+export PATH="$HOME/.cargo/bin:$PATH"
+export LC_ALL="en_US.UTF-8"
+export LC_CTYPE="en_US.UTF-8"
 
 
+ru(){
+  rustc "$1"
+  ./${1%.rs}
+}
+
+alias apti='sudo apt install -y'
+alias ggraph="git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)' --all"
+
+killem() {
+  sudo kill -9 $(ps aux | grep "$1" | awk '{print$2}'| tail -n 10)
+}
+
+vid_to_gif() {
+  mkdir frames
+  ffmpeg -i $1 -r 15 -q:v 2 frames/%04d.png
+  gifski -o $2 frames/*.png
+  rm -rf frames
+}
+
+
+#--- zulip   ---#
+# run checks
+alias lint='./tools/lint-all'
+
+alias unity="./proj/unity/UnityHub.AppImage"
+
+export DESKTOP_SESSION="kde"
+export XDG_CURRENT_DESKTOP="KDE"
+export KDE_SESSION_VERSION="5"
+
+reminder_cd() {
+    builtin cd "$@" && { [ ! -f .cd-reminder ] || cat .cd-reminder 1>&2; }
+}
+
+alias cd=reminder_cd
+
+reminder_z() {
+    z "$@" && { [ ! -f .cd-reminder ] || cat .cd-reminder 1>&2; }
+}
+
+alias z=reminder_z
+
+alias vu="vagrant up --provider=docker"
+alias vs="vagrant ssh"
+alias v="vs;vu"
