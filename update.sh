@@ -6,9 +6,7 @@ then
   rm -rf !(.git|update.sh|.|..)
 fi
 
-cp -r ~/.config/termite ~/dotfiles
 cp -r ~/.config/i3 ~/dotfiles
-cp -r ~/.config/ranger ~/dotfiles
 cp -r ~/.config/polybar ~/dotfiles
 mkdir zsh
 mkdir nvim
