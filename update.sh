@@ -20,3 +20,4 @@ cp -r /etc/X11 ~/dotfiles
 git add .
 git commit -m "update dotfiles"
 git push origin master
+
