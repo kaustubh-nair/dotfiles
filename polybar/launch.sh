@@ -1,3 +1,3 @@
 #!/bin/zsh
 killall -q polybar
-polybar example &
+polybar -c ~/.config/polybar/config example &

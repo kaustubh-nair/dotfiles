@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/k/.oh-my-zsh
+  export ZSH=/home/kau/.oh-my-zsh
 
 
   #
@@ -112,6 +112,7 @@ bindkey '^ ' autosuggest-accept
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 
 alias vmi='vim'
+alias vim='nvim'
 alias c="clear"
 alias d="docker"
 alias dr="docker run"
@@ -136,6 +137,7 @@ alias gl='git log'
 alias softreset='git reset HEAD~'
 alias grc='git rebase --continue'
 alias ga='git add .'
+alias gdh='git diff HEAD~ HEAD'
 
 gc(){
   git add .
@@ -175,18 +177,6 @@ j(){
   java ${1%.java}
 }
 
-foo()
-{
-    for var in "$@"
-    do
-        a=${var%.jpg}
-        b=".jpeg"
-        c="${a}${b}"
-        mv "$var" "$c"
-    done
-}
-
-
 export VISUAL=vim
 export EDITOR="$VISUAL"
 function cats() {
@@ -199,7 +189,7 @@ function cats() {
 	fi;
 }
 
-. ~/.zsh/z/z.sh
+. ~/.oh-my-zsh/plugins/z/z.sh
 
 g(){
   gcc $1
@@ -278,7 +268,7 @@ vid_to_gif() {
 
 #--- zulip   ---#
 # run checks
-alias lint='./tools/lint-all'
+alias lin='./tools/lint-all'
 
 alias unity="./proj/unity/UnityHub.AppImage"
 

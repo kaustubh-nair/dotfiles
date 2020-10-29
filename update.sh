@@ -11,18 +11,12 @@ cp -r ~/.config/i3 ~/dotfiles
 cp -r ~/.config/ranger ~/dotfiles
 cp -r ~/.config/polybar ~/dotfiles
 mkdir zsh
-mkdir vim
+mkdir nvim
 cp ~/.zprofile ~/dotfiles/zsh
-cp ~/.vimrc ~/dotfiles/vim
 cp ~/.zshrc ~/dotfiles/zsh
-cp ~/.xmodmap-archlinux ~/dotfiles/.xmod
-cp -r ~/.oh-my-zsh ~/dotfiles/zsh
+cp ~/.xbindkeysrc ~/dotfiles/.
+cp ~/.config/nvim/init.vim ~/dotfiles/nvim/.
 cp -r /etc/X11 ~/dotfiles
-
-rm -rf ~/dotfile/zsh/.oh-my-zsh/.git
-rm -rf ~/dotfile/zsh/.oh-my-zsh/custom/plugins/zsh-256color/.git
-rm -rf ~/dotfile/zsh/.oh-my-zsh/custom/plugins/zsh-autosuggestions/.git
-rm -rf ~/dotfile/zsh/.oh-my-zsh/plugins/alien-minimal/.git
 
 
 git add .

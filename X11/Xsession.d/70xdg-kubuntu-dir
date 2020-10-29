@@ -1,2 +1,0 @@
-# Added a path to put Kubuntu Settings
-XDG_CONFIG_DIRS="$XDG_CONFIG_DIRS:/usr/share/kubuntu-default-settings/kf5-settings"
