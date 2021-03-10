@@ -154,6 +154,9 @@ gp(){
 gpo(){
   git push origin $(git rev-parse --abbrev-ref HEAD)
 }
+gpof(){
+  git push origin -f $(git rev-parse --abbrev-ref HEAD)
+}
 gpu(){
   git push upstream $(git rev-parse --abbrev-ref HEAD)
 }
@@ -291,3 +294,7 @@ alias z=reminder_z
 alias vu="vagrant up --provider=docker"
 alias vs="vagrant ssh"
 alias v="vs;vu"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/kau/.sdkman"
+[[ -s "/home/kau/.sdkman/bin/sdkman-init.sh" ]] && source "/home/kau/.sdkman/bin/sdkman-init.sh"

@@ -228,7 +228,7 @@ exec_always --no-startup-id xmodmap -e "keycode 133 = Escape"
 exec_always --no-startup-id setxkbmap -option caps:backspace
 exec_always --no-startup-id setxkbmap -option shift:both_capslock
 exec_always --no-startup-id xmodmap -e "clear Lock"
-exec_always --no-startup-id feh --bg-scale ~/Pictures/aurora.jpg
+exec_always --no-startup-id feh --bg-scale ~/Pictures/wall2.jpg
 exec_always --no-startup-id export DESKTOP_SESSION=13
 exec_always --no-startup-id export XDG_CURRENT_DESKTOP=13
 exec_always --no-startup-id redshift -l 19.0760:72.8777 &

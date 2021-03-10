@@ -15,6 +15,7 @@ cp ~/.zshrc ~/dotfiles/zsh
 cp ~/.xbindkeysrc ~/dotfiles/.
 cp ~/.config/nvim/init.vim ~/dotfiles/nvim/.
 cp -r /etc/X11 ~/dotfiles
+cp ~/.config/PulseEffects/output/* ~/dotfiles/pulseeffects/
 
 
 git add .

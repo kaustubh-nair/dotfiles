@@ -5,6 +5,7 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call plug#begin()
 Plug 'connorholyday/vim-snazzy'
+Plug 'martinda/Jenkinsfile-vim-syntax'
 Plug 'preservim/nerdtree'
 Plug '907th/vim-auto-save'
 Plug 'easymotion/vim-easymotion'
